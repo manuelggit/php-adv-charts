@@ -1,16 +1,21 @@
+function printAllChart(outputId, chartType, labels, label, data){
+  var ctx = $('#' + outputId);
+  var myChart = new Chart(ctx, {
+      type: chartType,
+      data: {
+          labels: labels,
+          datasets: [{
+              label: label,
+              data: data,
+          }]
+      },
+  });
+}
+
 function printLine(data) {
 
-var ctx = document.getElementById('lineChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: data['type'],
-    data: {
-        labels: moment.months(),
-        datasets: [{
-            label: 'Vendite',
-            data: data['data'],
-        }]
-    },
-});
+  printAllChart('lineChart', data['type'], moment.months(), 'Vendite', data['data']);
+
 }
 
 
@@ -19,17 +24,8 @@ function printPie(data) {
   var nomi = Object.keys(data['data']);
   var venditeNomi = Object.values(data['data']);
 
-  var ctx = document.getElementById('pieChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-      type: data['type'],
-      data: {
-          labels: nomi,
-          datasets: [{
-              label: 'Vendite',
-              data: venditeNomi
-          }]
-      },
-  });
+  printAllChart('pieChart', data['type'], nomi, '', venditeNomi);
+
 }
 
 function getData2() {
