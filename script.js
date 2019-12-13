@@ -1,4 +1,4 @@
-function printData(data) {
+function printLine(data) {
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -11,9 +11,7 @@ var myChart = new Chart(ctx, {
         }]
     },
 });
-
 }
-
 
 
 function getData() {
@@ -24,15 +22,12 @@ function getData() {
     method: 'GET',
     success: function(data) {
       console.log('data', data);
-      printData(data);
+      printLine(data);
     },
     error: function(err){
-      console.log('error', err);
-
+      // console.log('error', err);
     }
-
-  })
-
+  });
 }
 
 
