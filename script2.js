@@ -1,4 +1,4 @@
-function printAllChart(outputId, chartType, labels, label, data){
+function printAllChart(outputId, chartType, labels, label, data, zero){
   var ctx = $('#' + outputId);
   var myChart = new Chart(ctx, {
       type: chartType,
@@ -7,14 +7,36 @@ function printAllChart(outputId, chartType, labels, label, data){
           datasets: [{
               label: label,
               data: data,
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+              ],
+              borderWidth: 1
           }]
       },
+      options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: zero,
+                }
+            }]
+        }
+    }
   });
 }
 
 function printLine(data) {
 
-  printAllChart('lineChart', data['type'], moment.months(), 'Vendite', data['data']);
+  printAllChart('lineChart', data['type'], moment.months(), 'Vendite', data['data'], true);
 
 }
 
@@ -22,7 +44,7 @@ function printLine(data) {
 function printPie(data) {
 
   var nomi = Object.keys(data['data']);
-  var venditeNomi = Object.values(data['data']);
+  var venditeNomi = Object.values(data['data'], false);
 
   printAllChart('pieChart', data['type'], nomi, '', venditeNomi);
 

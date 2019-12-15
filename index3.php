@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Adv Charts 2</title>
+    <title>Adv Charts 3</title>
     <link rel="stylesheet" href="style.css">
     <!-- FONT: LATO -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
@@ -19,8 +19,17 @@
         <div class="wrapper">
           <canvas id="lineChart"></canvas>
           <canvas id="pieChart"></canvas>
+          <canvas id="secondlineChart"></canvas>
         </div>
       </div>
+
+      <?php
+
+      $level = $_GET['level'];
+
+
+
+      ?>
 
 
 
@@ -34,7 +43,7 @@
     <!-- JS: HANDLEBARS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js" charset="utf-8"></script>
 
-    <script src="script2.js" type="text/javascript"></script>
+    <script src="script3.js" type="text/javascript"></script>
 
   </body>
 </html>

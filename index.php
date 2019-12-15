@@ -8,12 +8,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <!-- FONT: FONTAWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-
-
   </head>
+
+
   <body>
-
-
 
       <div id="container">
         <div class="wrapper">
